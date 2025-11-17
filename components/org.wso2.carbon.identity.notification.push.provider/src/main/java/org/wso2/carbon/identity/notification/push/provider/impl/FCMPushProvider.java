@@ -118,6 +118,7 @@ public class FCMPushProvider implements PushProvider {
                 log.debug("Successfully sent message: " + response);
             }
         } catch (FirebaseMessagingException e) {
+            log.debug("Error occurred while sending push notification via FCM.", e);
             throw handleFirebaseMessagingException(e);
         }
     }
